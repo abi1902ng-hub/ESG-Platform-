@@ -1,0 +1,24 @@
+{% extends "dashboard/_dashboard_base.html" %}
+{% block dash_title %}CSR Dashboard{% endblock %}
+{% block dash_content %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Active Challenges</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">CSR Participation Rate</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Pending Evidence Review</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Badges Unlocked (30d)</div><div class="kpi-value">—</div></div>
+  </div>
+</div>
+<div class="card-surface p-4">
+  <p class="text-secondary small mb-0">
+    <i class="bi bi-info-circle"></i>
+    CSR calendar and reward-store management connect here once the Social &amp; Gamification modules ship.
+  </p>
+</div>
+{% endblock %}

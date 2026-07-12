@@ -1,0 +1,24 @@
+{% extends "dashboard/_dashboard_base.html" %}
+{% block dash_title %}Team Dashboard{% endblock %}
+{% block dash_content %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Department ESG Score</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Pending Approvals</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Team Carbon Footprint</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">CSR Participation</div><div class="kpi-value">—</div></div>
+  </div>
+</div>
+<div class="card-surface p-4">
+  <p class="text-secondary small mb-0">
+    <i class="bi bi-info-circle"></i>
+    CSR &amp; challenge approval queues connect here once the Social and Gamification modules ship.
+  </p>
+</div>
+{% endblock %}

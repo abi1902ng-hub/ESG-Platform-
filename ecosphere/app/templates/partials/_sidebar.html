@@ -1,0 +1,50 @@
+<aside class="sidebar" id="appSidebar">
+  <div class="sidebar-brand">
+    <i class="bi bi-globe-americas-fill brand-icon"></i>
+    <span class="brand-text">{{ app_name }}</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Main</div>
+    <a href="{{ url_for('dashboard.index') }}" class="nav-link {{ 'active' if request.endpoint == 'dashboard.index' }}">
+      <i class="bi bi-speedometer2"></i><span>Dashboard</span>
+    </a>
+
+    {% if current_user.has_role('super_admin', 'org_admin') %}
+    <div class="nav-section-label">Administration</div>
+    <a href="#" class="nav-link"><i class="bi bi-people"></i><span>User Management</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-diagram-3"></i><span>Departments</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-shield-lock"></i><span>Roles &amp; Permissions</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-gear"></i><span>Org Settings</span></a>
+    {% endif %}
+
+    <div class="nav-section-label">ESG Modules</div>
+    <a href="#" class="nav-link"><i class="bi bi-tree"></i><span>Environmental</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-people-fill"></i><span>Social / CSR</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-clipboard-check"></i><span>Governance</span></a>
+
+    {% if current_user.has_role('csr_manager', 'org_admin', 'super_admin') %}
+    <a href="#" class="nav-link"><i class="bi bi-trophy"></i><span>Gamification</span></a>
+    {% endif %}
+
+    {% if current_user.has_role('auditor', 'org_admin', 'super_admin') %}
+    <div class="nav-section-label">Compliance</div>
+    <a href="#" class="nav-link"><i class="bi bi-search"></i><span>Audits</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-exclamation-triangle"></i><span>Compliance Issues</span></a>
+    {% endif %}
+
+    <div class="nav-section-label">Reports</div>
+    <a href="#" class="nav-link"><i class="bi bi-file-earmark-bar-graph"></i><span>Reports</span></a>
+
+    <div class="nav-section-label">Account</div>
+    <a href="{{ url_for('auth.profile') }}" class="nav-link {{ 'active' if request.endpoint == 'auth.profile' }}">
+      <i class="bi bi-person-circle"></i><span>My Profile</span>
+    </a>
+    <a href="{{ url_for('auth.change_password') }}" class="nav-link {{ 'active' if request.endpoint == 'auth.change_password' }}">
+      <i class="bi bi-key"></i><span>Change Password</span>
+    </a>
+    <a href="{{ url_for('auth.activity_log') }}" class="nav-link {{ 'active' if request.endpoint == 'auth.activity_log' }}">
+      <i class="bi bi-clock-history"></i><span>Activity Log</span>
+    </a>
+  </nav>
+</aside>

@@ -1,0 +1,46 @@
+{% extends "layout_app.html" %}
+{% block title %}My Profile · {{ app_name }}{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-7">
+    <h4 class="display-font mb-1">My Profile</h4>
+    <p class="text-secondary small mb-4">Manage your personal details.</p>
+
+    <div class="card-surface p-4 mb-3 d-flex flex-row align-items-center gap-3">
+      <span class="avatar-circle" style="width:56px;height:56px;font-size:1.2rem;">
+        {{ current_user.first_name[0] }}{{ current_user.last_name[0] }}
+      </span>
+      <div>
+        <div class="fw-semibold">{{ current_user.full_name }}</div>
+        <div class="text-secondary small">{{ current_user.email }}</div>
+        <span class="badge-role mt-1 d-inline-block">{{ current_user.role.display_name }}</span>
+      </div>
+    </div>
+
+    <div class="card-surface p-4">
+      <form method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="row g-3">
+          <div class="col-md-6">
+            {{ form.first_name.label(class_="form-label") }}
+            {{ form.first_name(class_="form-control") }}
+          </div>
+          <div class="col-md-6">
+            {{ form.last_name.label(class_="form-label") }}
+            {{ form.last_name(class_="form-control") }}
+          </div>
+          <div class="col-md-6">
+            {{ form.phone.label(class_="form-label") }}
+            {{ form.phone(class_="form-control") }}
+          </div>
+          <div class="col-md-6">
+            {{ form.designation.label(class_="form-label") }}
+            {{ form.designation(class_="form-control") }}
+          </div>
+        </div>
+        <div class="mt-4">{{ form.submit(class_="btn btn-primary px-4") }}</div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

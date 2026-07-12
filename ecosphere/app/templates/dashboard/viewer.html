@@ -1,0 +1,19 @@
+{% extends "dashboard/_dashboard_base.html" %}
+{% block dash_title %}ESG Overview{% endblock %}
+{% block dash_subtitle %}Read-only view of organizational ESG performance.{% endblock %}
+{% block dash_content %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Overall ESG Score</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Environmental</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Social</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Governance</div><div class="kpi-value">—</div></div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Verify OTP · {{ app_name }}{% endblock %}
+{% block body %}
+<div class="auth-shell">
+  <div class="auth-card">
+    <div class="auth-brand"><i class="bi bi-globe-americas-fill"></i> {{ app_name }}</div>
+    <h5 class="mb-1">Enter verification code</h5>
+    <p class="text-secondary small mb-4">Check your email for a 6-digit OTP. It expires in 10 minutes.</p>
+
+    {% include 'partials/_flash.html' %}
+
+    <form method="POST" novalidate>
+      {{ form.hidden_tag() }}
+      <div class="mb-3">
+        {{ form.code.label(class_="form-label") }}
+        {{ form.code(class_="form-control text-center", style="letter-spacing:0.5em;font-family:var(--font-mono);font-size:1.2rem;", maxlength=6, autofocus=true) }}
+        {% for e in form.code.errors %}<div class="text-danger small mt-1">{{ e }}</div>{% endfor %}
+      </div>
+      {{ form.submit(class_="btn btn-primary w-100 py-2") }}
+    </form>
+
+    <p class="text-center text-secondary small mt-4 mb-0">
+      <a href="{{ url_for('auth.forgot_password') }}"><i class="bi bi-arrow-left"></i> Resend OTP</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

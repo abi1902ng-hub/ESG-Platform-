@@ -1,0 +1,24 @@
+{% extends "dashboard/_dashboard_base.html" %}
+{% block dash_title %}Audit Dashboard{% endblock %}
+{% block dash_content %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Open Audits</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Compliance Issues</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Overdue Corrective Actions</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Policies Pending Ack.</div><div class="kpi-value">—</div></div>
+  </div>
+</div>
+<div class="card-surface p-4">
+  <p class="text-secondary small mb-0">
+    <i class="bi bi-info-circle"></i>
+    Audit templates and the Risk Register connect here once the Governance module ships.
+  </p>
+</div>
+{% endblock %}

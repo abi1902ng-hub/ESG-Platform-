@@ -1,0 +1,12 @@
+{% extends "layout_app.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-2">
+  <div>
+    <h4 class="display-font mb-1">{% block dash_title %}Dashboard{% endblock %}</h4>
+    <p class="text-secondary small mb-0">{% block dash_subtitle %}Welcome back, {{ current_user.first_name }}.{% endblock %}</p>
+  </div>
+  <span class="badge-role">{{ current_user.role.display_name }}</span>
+</div>
+
+{% block dash_content %}{% endblock %}
+{% endblock %}

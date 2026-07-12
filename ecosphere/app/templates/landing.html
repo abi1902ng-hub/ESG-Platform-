@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} — ESG Management, Grown Into Your Operations{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">{% endblock %}
+{% block body %}
+
+<nav class="landing-nav">
+  <div class="landing-nav-inner">
+    <a href="{{ url_for('main.landing') }}" class="landing-brand"><i class="bi bi-globe-americas-fill"></i> {{ app_name }}</a>
+    <div class="landing-nav-links">
+      <a href="#features">Features</a>
+      <a href="#modules">Modules</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="landing-nav-cta">
+      <button class="btn btn-icon" id="themeToggle"><i class="bi bi-moon-stars" id="themeIcon"></i></button>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary btn-sm">Sign In</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-sm">Request Demo</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Odoo-style ESG Suite</span>
+    <h1 class="hero-title">Every ton of carbon.<br>Every CSR hour.<br>One ledger.</h1>
+    <p class="hero-sub">
+      EcoSphere turns your day-to-day operations — electricity bills, fleet logs,
+      CSR sign-ups, policy approvals — into a living ESG score your board can
+      audit and your employees can play toward.
+    </p>
+    <div class="hero-cta">
+      <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg px-4">Get Started</a>
+      <a href="#modules" class="btn btn-outline-secondary btn-lg px-4">Explore Modules</a>
+    </div>
+
+    <div class="hero-stats" id="heroStats">
+      <div class="stat"><div class="stat-value mono" data-target="128">0</div><div class="stat-label">Emission Factors Tracked</div></div>
+      <div class="stat"><div class="stat-value mono" data-target="42">0</div><div class="stat-label">Report Templates</div></div>
+      <div class="stat"><div class="stat-value mono" data-target="7">0</div><div class="stat-label">Role-Based Workspaces</div></div>
+      <div class="stat"><div class="stat-value mono" data-target="99">0</div><div class="stat-label">% Audit Trail Coverage</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="features">
+  <div class="section-inner">
+    <span class="section-eyebrow">Why EcoSphere</span>
+    <h2 class="section-title">Built like an ERP, scored like a scoreboard.</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="bi bi-diagram-3"></i>
+        <h4>Operational, not just reported</h4>
+        <p>Carbon is calculated automatically from real transactions — electricity, fuel, fleet, purchases — not entered by hand at quarter-end.</p>
+      </div>
+      <div class="feature-card">
+        <i class="bi bi-shield-check"></i>
+        <h4>Governance you can prove</h4>
+        <p>Policy acknowledgement, internal audits, corrective actions and a risk register, all with owners and due dates.</p>
+      </div>
+      <div class="feature-card">
+        <i class="bi bi-trophy"></i>
+        <h4>Gamified participation</h4>
+        <p>XP, badges, coins and leaderboards turn CSR and sustainability targets into something employees actually engage with.</p>
+      </div>
+      <div class="feature-card">
+        <i class="bi bi-robot"></i>
+        <h4>AI-assisted insight</h4>
+        <p>Score prediction, anomaly detection, and a recommendation engine surface what needs attention before it becomes a finding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="modules">
+  <div class="section-inner">
+    <span class="section-eyebrow">Three pillars, one platform</span>
+    <h2 class="section-title">Environmental. Social. Governance.</h2>
+    <div class="pillar-grid">
+      <div class="pillar-card pillar-env">
+        <i class="bi bi-tree"></i>
+        <h4>Environmental</h4>
+        <p>Emission factors, carbon transactions, fleet &amp; manufacturing emissions, waste, water, renewables, and goal tracking.</p>
+      </div>
+      <div class="pillar-card pillar-social">
+        <i class="bi bi-people-fill"></i>
+        <h4>Social</h4>
+        <p>CSR activities, volunteering, diversity metrics, training, and manager-approved evidence uploads.</p>
+      </div>
+      <div class="pillar-card pillar-gov">
+        <i class="bi bi-clipboard-check"></i>
+        <h4>Governance</h4>
+        <p>Policies, internal audits, compliance issues, corrective actions, and a live risk register.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="section-inner">
+    <span class="section-eyebrow">Trusted by sustainability teams</span>
+    <h2 class="section-title">What early teams are saying</h2>
+    <div class="testimonial-grid">
+      <blockquote class="testimonial">
+        <p>"We replaced four spreadsheets and a consultant with one dashboard. Our audit prep dropped from three weeks to three days."</p>
+        <footer>— Head of Sustainability, Manufacturing Group</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>"The gamification layer is what actually got 400 employees to log their CSR hours. That never happened before."</p>
+        <footer>— CSR Manager, IT Services Firm</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="pricing">
+  <div class="section-inner">
+    <span class="section-eyebrow">Demo pricing</span>
+    <h2 class="section-title">Simple, seat-based plans</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h4>Starter</h4>
+        <div class="price">₹0<span>/mo demo</span></div>
+        <ul>
+          <li>Up to 25 users</li>
+          <li>Core E/S/G modules</li>
+          <li>Standard reports</li>
+        </ul>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary w-100">Try it</a>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">Most Popular</span>
+        <h4>Growth</h4>
+        <div class="price">₹499<span>/user/mo</span></div>
+        <ul>
+          <li>Unlimited users</li>
+          <li>Gamification &amp; rewards</li>
+          <li>Custom report builder</li>
+          <li>AI insights &amp; predictions</li>
+        </ul>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary w-100">Get Started</a>
+      </div>
+      <div class="price-card">
+        <h4>Enterprise</h4>
+        <div class="price">Custom</div>
+        <ul>
+          <li>Multi-org tenancy</li>
+          <li>Dedicated audit workflows</li>
+          <li>SLA &amp; onboarding support</li>
+        </ul>
+        <a href="#" class="btn btn-outline-secondary w-100">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-inner">
+    <span class="section-eyebrow">FAQ</span>
+    <h2 class="section-title">Common questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How is carbon calculated?</button></h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Every logged activity (electricity, fuel, purchase, etc.) is multiplied by its emission factor at the time of entry, then attributed to a department, employee, and date for full traceability.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can auditors work independently of admins?</button></h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes. The Auditor role has its own workspace for conducting audits, raising compliance issues, assigning owners, and tracking closure — separate from admin permissions.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Does EcoSphere integrate with government ID systems?</button></h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">The platform is designed to support integrations such as DigiLocker for credential and evidence verification workflows.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="section-inner text-center">
+    <h2 class="section-title mb-2">Ready to see your ESG score?</h2>
+    <p class="text-secondary mb-4">Sign in to explore the role-based demo workspace.</p>
+    <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg px-5">Get Started</a>
+  </div>
+</section>
+
+<footer class="landing-footer">
+  <div class="section-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="landing-brand mb-2"><i class="bi bi-globe-americas-fill"></i> {{ app_name }}</div>
+        <p class="text-secondary small">Enterprise ESG management, grown into your operations.</p>
+      </div>
+      <div>
+        <h6>Product</h6>
+        <a href="#features">Features</a><br>
+        <a href="#modules">Modules</a><br>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div>
+        <h6>Company</h6>
+        <a href="#">About</a><br>
+        <a href="#">Contact</a><br>
+        <a href="#">Careers</a>
+      </div>
+      <div>
+        <h6>Legal</h6>
+        <a href="#">Privacy</a><br>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom text-secondary small">© 2026 {{ app_name }}. Built for the Odoo Hackathon.</div>
+  </div>
+</footer>
+
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+{% endblock %}

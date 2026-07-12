@@ -1,0 +1,24 @@
+{% extends "dashboard/_dashboard_base.html" %}
+{% block dash_title %}My Dashboard{% endblock %}
+{% block dash_content %}
+<div class="row g-3 mb-4">
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">My ESG Score</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">My Carbon Footprint</div><div class="kpi-value">—</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">XP Points</div><div class="kpi-value mono">{{ current_user.xp_points }}</div></div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi-card"><div class="kpi-label">Coins</div><div class="kpi-value mono">{{ current_user.coins }}</div></div>
+  </div>
+</div>
+<div class="card-surface p-4">
+  <p class="text-secondary small mb-0">
+    <i class="bi bi-info-circle"></i>
+    My Badges, Challenges, and Rewards populate here once the Gamification module ships.
+  </p>
+</div>
+{% endblock %}
